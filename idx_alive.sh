@@ -71,8 +71,8 @@ fi
 echo -e "${YELLOW}[3/4] 正在设置 Ngrok 隧道...${RESET}"
 
 # 下载并设置 ngrok（如果尚未安装）
-if [ ! -f /home/user/app/nixag/ngrok ]; then
-  wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -qO- | tar -xz -C /home/user/app/nixag/
+if [ ! -f ~/app/nixag/ngrok ]; then
+  wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -qO- | tar -xz -C ~/app/nixag/
 fi
 
 # 查找可用的 API 端口
