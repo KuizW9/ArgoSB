@@ -50,7 +50,7 @@ rm -rf /etc/s-box-ag /usr/bin/agsb
 }
 up(){
 rm -rf /usr/bin/agsb
-curl -L -o /usr/bin/agsb -# --retry 2 --insecure https://raw.githubusercontent.com/yonggekkk/argosb/main/argosb.sh
+curl -L -o /usr/bin/agsb -# --retry 2 --insecure https://raw.githubusercontent.com/kuizw9/argosb/main/argosb2.sh
 chmod +x /usr/bin/agsb
 }
 if [[ "$1" == "del" ]]; then
@@ -304,7 +304,7 @@ mkdir -p nixag
 del(){
 kill -15 $(cat nixag/sbargopid.log 2>/dev/null) >/dev/null 2>&1
 kill -15 $(cat nixag/sbpid.log 2>/dev/null) >/dev/null 2>&1
-sed -i '/yonggekkk/d' ~/.bashrc 
+sed -i '/kuizw9/d' ~/.bashrc 
 source ~/.bashrc
 rm -rf nixag
 }
@@ -349,7 +349,7 @@ echo "当前uuid密码：$UUID"
 echo
 if [[ "$hostname" == *firebase* || "$hostname" == *idx* ]]; then
 [ -f ~/.bashrc ] || touch ~/.bashrc
-sed -i '/yonggekkk/d' ~/.bashrc
+sed -i '/kuizw9/d' ~/.bashrc
 echo "export nix=y uuid=${uuid} vmpt=${port_vm_ws} agn=${ARGO_DOMAIN} agk=${ARGO_AUTH} && bash <(curl -Ls https://raw.githubusercontent.com/kuizw9/argosb/main/argosb2.sh)" >> ~/.bashrc
 source ~/.bashrc
 fi
