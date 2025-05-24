@@ -12,13 +12,13 @@
 
 主流VPS脚本如下，默认安装为Argo临时隧道（uuid、vmess端口未设变量时，为随机生成）
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/argosb.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/kuizw9/argosb/main/argosb.sh)
 ```
 ----------------------------------------------------------
 
 容器NIX脚本如下，默认安装为Argo临时隧道（uuid、vmess端口未设变量时，为随机生成）
 ```
-nix=y bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/argosb.sh)
+nix=y bash <(curl -Ls https://raw.githubusercontent.com/kuizw9/argosb/main/argosb.sh)
 ```
 
 ----------------------------------------------------------
@@ -30,12 +30,12 @@ nix=y bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/ar
 
 主流VPS脚本：
 ```
-uuid=你的uuid vmpt=可使用的端口 bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/argosb.sh)
+uuid=你的uuid vmpt=可使用的端口 bash <(curl -Ls https://raw.githubusercontent.com/kuizw9/argosb/main/argosb.sh)
 ```
 
 容器NIX脚本：
 ```
-nix=y uuid=你的uuid vmpt=可使用的端口 bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/argosb.sh)
+nix=y uuid=你的uuid vmpt=可使用的端口 bash <(curl -Ls https://raw.githubusercontent.com/kuizw9/argosb/main/argosb.sh)
 ```
 
 #### 2、Argo固定隧道：
@@ -43,12 +43,12 @@ nix=y uuid=你的uuid vmpt=可使用的端口 bash <(curl -Ls https://raw.github
 
 主流VPS脚本：
 ```
-uuid=你的uuid vmpt=可使用的端口 agn=固定域名 agk=ey开头的token bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/argosb.sh)
+uuid=你的uuid vmpt=可使用的端口 agn=固定域名 agk=ey开头的token bash <(curl -Ls https://raw.githubusercontent.com/kuizw9/argosb/main/argosb.sh)
 ```
 
 容器NIX脚本：
 ```
-nix=y uuid=你的uuid vmpt=可使用的端口 agn=固定域名 agk=ey开头的token bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/argosb.sh)
+nix=y uuid=你的uuid vmpt=可使用的端口 agn=固定域名 agk=ey开头的token bash <(curl -Ls https://raw.githubusercontent.com/kuizw9/argosb/main/argosb.sh)
 ```
 
 
@@ -60,19 +60,19 @@ nix=y uuid=你的uuid vmpt=可使用的端口 agn=固定域名 agk=ey开头的to
 
 1、查看Argo的固定域名、固定隧道的token、临时域名、当前节点信息：
 
-主流VPS脚本：```agsb``` 或者 ```bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/argosb.sh)```
+主流VPS脚本：```agsb``` 或者 ```bash <(curl -Ls https://raw.githubusercontent.com/kuizw9/argosb/main/argosb.sh)```
 
-容器NIX脚本：```nix=y bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/argosb.sh)```
+容器NIX脚本：```nix=y bash <(curl -Ls https://raw.githubusercontent.com/kuizw9/argosb/main/argosb.sh)```
 
 2、升级ArgoSB脚本：
 
-主流VPS脚本：```agsb up``` 或者 ```bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/argosb.sh) up```
+主流VPS脚本：```agsb up``` 或者 ```bash <(curl -Ls https://raw.githubusercontent.com/kuizw9/argosb/main/argosb.sh) up```
 
 3、卸载ArgoSB脚本：
 
-主流VPS脚本：```agsb del``` 或者 ```bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/argosb.sh) del```
+主流VPS脚本：```agsb del``` 或者 ```bash <(curl -Ls https://raw.githubusercontent.com/kuizw9/argosb/main/argosb.sh) del```
 
-容器NIX脚本：```nix=y bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/argosb.sh) del```
+容器NIX脚本：```nix=y bash <(curl -Ls https://raw.githubusercontent.com/kuizw9/argosb/main/argosb.sh) del```
 
 ----------------------------------------------------------
 
@@ -97,7 +97,7 @@ nix=y uuid=你的uuid vmpt=可使用的端口 agn=固定域名 agk=ey开头的to
 
 ----------------------------------------------------------
 ### 感谢你右上角的star🌟
-[![Stargazers over time](https://starchart.cc/yonggekkk/ArgoSB.svg)](https://starchart.cc/yonggekkk/ArgoSB)
+[![Stargazers over time](https://starchart.cc/kuizw9/ArgoSB.svg)](https://starchart.cc/kuizw9/ArgoSB)
 
 ----------------------------------------------------------
 
