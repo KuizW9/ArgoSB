@@ -133,6 +133,7 @@ fi
 
 if [ -z $port_vm_ws ]; then
 port_vm_ws=$(shuf -i 10000-65535 -n 1)
+ARGO_DOMAIN=${agn:-'argosb-'$port_vm_ws'.alvgw.xyz'}   
 fi
 if [ -z $UUID ]; then
 UUID=$(/etc/s-box-ag/sing-box generate uuid)
@@ -338,6 +339,7 @@ fi
 fi
 if [ -z $port_vm_ws ]; then
 port_vm_ws=$(shuf -i 10000-65535 -n 1)
+ARGO_DOMAIN=${agn:-'argosb-'$port_vm_ws'.alvgw.xyz'}   
 fi
 if [ -z $UUID ]; then
 UUID=$(./nixag/sing-box generate uuid)
