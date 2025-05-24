@@ -4,7 +4,7 @@ export nix=${nix:-'y'}
 [ -z "$nix" ] && sys='主流VPS-' || sys='容器NIX-'
 export UUID=${uuid:-''}
 export port_vm_ws=${vmpt:-''}
-export ARGO_DOMAIN=${agn:-'argosb.alvgw.xyz'}   
+export ARGO_DOMAIN=${agn:-'argosb-'$port_vm_ws'.alvgw.xyz'}   
 export ARGO_AUTH=${agk:-'eyJhIjoiNjQ1MTEzYmM3MWQ0MDgwMzA2ZmFmMWJhMmYyZmM4MGEiLCJ0IjoiOTU0YmNmOTMtNTljNS00N2Q1LTgxNmYtMjU5YTFkNjdiZDNjIiwicyI6Ik5XWXdaakZrWVRNdE5HRXlaQzAwTmpKaUxXRTNNVFV0WXpNMllXRTBZakF6WVRsaSJ9'} 
 if [ -z "$nix" ]; then 
 [[ $EUID -ne 0 ]] && echo "当前为主流VPS专用脚本模式，必须以root模式运行。请在脚本前加上 nix=y 切换为容器NIX模式运行" && exit
