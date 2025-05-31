@@ -162,7 +162,7 @@ cat > ./config.json <<EOF
       },
       {
         "type": "socks",
-        "tag":"warp-au",
+        "tag":"warp-jp",
         "server": "127.0.0.1",
         "server_port": 1080,
         "version": "5",
@@ -171,7 +171,7 @@ cat > ./config.json <<EOF
       },
       {
         "type": "socks",
-        "tag":"warp-uk",
+        "tag":"warp-au",
         "server": "127.0.0.1",
         "server_port": 1081,
         "version": "5",
@@ -180,7 +180,7 @@ cat > ./config.json <<EOF
       },
       {
         "type": "socks",
-        "tag": "warp-us",
+        "tag": "warp-uk",
         "server": "127.0.0.1",
         "server_port": 1082,
         "version": "5",
@@ -189,7 +189,7 @@ cat > ./config.json <<EOF
       },
       {
         "type": "socks",
-        "tag": "warp-jp",
+        "tag": "warp-us",
         "server": "127.0.0.1",
         "server_port": 1083,
         "version": "5",
