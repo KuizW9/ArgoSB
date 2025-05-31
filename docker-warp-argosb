@@ -59,6 +59,22 @@ cat > ./config.json <<EOF
       "level": "info",
       "timestamp": true
     },
+    "route": {
+      "rules": [
+        {
+          "inbound":"vmess-sb",
+          "user":"direct",
+          "action": "route",
+          "outbound": "direct"
+        },
+        {
+          "inbound":"vmess-sb",
+          "user":"warp",
+          "action": "route",
+          "outbound": "kuiz-socks"
+        }
+      ]
+    },
     "inbounds": [
       {
         "type": "vmess",
@@ -67,12 +83,12 @@ cat > ./config.json <<EOF
         "listen_port": 54321,
         "users": [
           {
-            "name": "vmess",
+            "name": "direct",
             "uuid": "78cc3f99-77ac-49fc-a790-fa1ef19fe0bf",
             "alterId": 0
           },
           {
-            "name": "warp-us",
+            "name": "warp",
             "uuid": "a8cc3f99-77ac-49fc-a790-fa1ef19fe0bf",
             "alterId": 0
           }
@@ -93,55 +109,64 @@ cat > ./config.json <<EOF
     ],
     "outbounds": [
       {
-        "type": "direct",
-        "tag": "direct"
+        "type": "socks",
+        "tag": "kuiz-socks",
+        "server": "alvgw.xyz",
+        "server_port": 8095,
+        "version": "5",
+        "username": "",
+        "password": ""
       },
       {
         "type": "socks",
         "tag":"warp",
         "server": "127.0.0.1",
-        "server_port": 8086
+        "server_port": 8086,
+        "version": "5",
+        "username": "",
+        "password": "",
+        "network": "tcp",
+        "udp_over_tcp": true
       },
       {
         "type": "socks",
         "tag":"warp-jp",
         "server": "127.0.0.1",
-        "server_port": 1080
+        "server_port": 1080,
+        "version": "5",
+        "username": "",
+        "password": ""
       },
       {
         "type": "socks",
         "tag":"warp-au",
         "server": "127.0.0.1",
-        "server_port": 1081
+        "server_port": 1081,
+        "version": "5",
+        "username": "",
+        "password": ""
       },
       {
         "type": "socks",
         "tag": "warp-uk",
         "server": "127.0.0.1",
-        "server_port": 1082
+        "server_port": 1082,
+        "version": "5",
+        "username": "",
+        "password": ""
       },
       {
         "type": "socks",
         "tag": "warp-us",
         "server": "127.0.0.1",
-        "server_port": 1083
-      }
-      ,
+        "server_port": 1083,
+        "version": "5",
+        "username": "",
+        "password": ""
+      },
       {
-        "type": "socks",
-        "tag": "kuiz-socks",
-        "server": "alvgw.xyz",
-        "server_port": 8095
+        "type": "direct",
+        "tag": "direct"
       }
-    ],
-    "route": {
-      "rules": [
-        {
-          "inbound":"vmess-sb",
-          "user":"warp-us",
-          "action": "route",
-          "outbound": "kuiz-socks"
-        }
-      ]
-    }
+    ]
   }EOF
