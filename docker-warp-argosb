@@ -44,13 +44,13 @@ docker run -itd \
 ghcr.io/bepass-org/warp-plus \
 --bind 127.0.0.1:1083 --cfon --country US
 
-echo -e "${YELLOW}Starting warp us docker...${RESET}"
+echo -e "${YELLOW}Starting warp sg docker...${RESET}"
 docker run -itd \
---name warp \
+--name warp-sg \
 --restart=unless-stopped \
 --network host \
 ghcr.io/bepass-org/warp-plus
-
+--bind 127.0.0.1:1084 --cfon --country SG
 
 cat > ./config.json <<EOF
 {
