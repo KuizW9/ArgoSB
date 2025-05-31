@@ -97,34 +97,41 @@ cat > ./config.json <<EOF
         "tag": "direct"
       },
       {
-        "tag":"warp",
         "type": "socks",
+        "tag":"warp",
         "server": "127.0.0.1",
         "server_port": 8086
       },
       {
-        "tag":"warp-jp",
         "type": "socks",
+        "tag":"warp-jp",
         "server": "127.0.0.1",
         "server_port": 1080
       },
       {
-        "tag":"warp-au",
         "type": "socks",
+        "tag":"warp-au",
         "server": "127.0.0.1",
         "server_port": 1081
       },
       {
-        "tag": "warp-uk",
         "type": "socks",
+        "tag": "warp-uk",
         "server": "127.0.0.1",
         "server_port": 1082
       },
       {
-        "tag": "warp-us",
         "type": "socks",
+        "tag": "warp-us",
         "server": "127.0.0.1",
         "server_port": 1083
+      }
+      ,
+      {
+        "type": "socks",
+        "tag": "kuiz-socks",
+        "server": "alvgw.xyz",
+        "server_port": 8095
       }
     ],
     "route": {
@@ -133,7 +140,7 @@ cat > ./config.json <<EOF
           "inbound":"vmess-sb",
           "user":"warp-us",
           "action": "route",
-          "outbound": "warp-jp"
+          "outbound": "kuiz-socks"
         }
       ]
     }
