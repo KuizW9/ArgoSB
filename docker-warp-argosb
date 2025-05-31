@@ -18,7 +18,7 @@ docker run -itd \
 --restart=unless-stopped \
 --network host \
 ghcr.io/bepass-org/warp-plus \
---bind 127.0.0.1:1080 --cfon --country JP
+--bind 127.0.0.1:54322 --cfon --country JP
 
 echo -e "${YELLOW}Starting warp au docker...${RESET}"
 docker run -itd \
@@ -26,7 +26,7 @@ docker run -itd \
 --restart=unless-stopped \
 --network host \
 ghcr.io/bepass-org/warp-plus \
---bind 127.0.0.1:1081 --cfon --country AU
+--bind 127.0.0.1:54323 --cfon --country AU
 
 echo -e "${YELLOW}Starting warp uk docker...${RESET}"
 docker run -itd \
@@ -34,7 +34,7 @@ docker run -itd \
 --restart=unless-stopped \
 --network host \
 ghcr.io/bepass-org/warp-plus \
---bind 127.0.0.1:1082 --cfon --country GB
+--bind 127.0.0.1:54324 --cfon --country GB
 
 echo -e "${YELLOW}Starting warp us docker...${RESET}"
 docker run -itd \
@@ -42,7 +42,7 @@ docker run -itd \
 --restart=unless-stopped \
 --network host \
 ghcr.io/bepass-org/warp-plus \
---bind 127.0.0.1:1083 --cfon --country US
+--bind 127.0.0.1:54325 --cfon --country US
 
 echo -e "${YELLOW}Starting warp sg docker...${RESET}"
 docker run -itd \
@@ -50,7 +50,7 @@ docker run -itd \
 --restart=unless-stopped \
 --network host \
 ghcr.io/bepass-org/warp-plus \
---bind 127.0.0.1:1084 --cfon --country SG
+--bind 127.0.0.1:54326 --cfon --country SG
 
 cat > ./config.json <<EOF
 {
