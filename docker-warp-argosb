@@ -8,7 +8,7 @@ cloudflare/cloudflared:latest \
 tunnel --no-autoupdate --edge-ip-version auto --protocol http2 run --token eyJhIjoiNjQ1MTEzYmM3MWQ0MDgwMzA2ZmFmMWJhMmYyZmM4MGEiLCJ0IjoiNTU3NGY4ZTEtYmQzMS00MmY2LWIxYTYtZWFkOTE2ODNmMjhjIiwicyI6Ik9USmtOMk0yT1RBdE16TTNOUzAwTm1VeExUZzFZall0T0RobU1HVXdZMkU0T0dJeSJ9
 
 
-
+#singbox1.12.0-beta19
 
 nohup cloudflared tunnel --no-autoupdate --edge-ip-version auto --protocol http2 run --token eyJhIjoiNjQ1MTEzYmM3MWQ0MDgwMzA2ZmFmMWJhMmYyZmM4MGEiLCJ0IjoiNTU3NGY4ZTEtYmQzMS00MmY2LWIxYTYtZWFkOTE2ODNmMjhjIiwicyI6Ik9USmtOMk0yT1RBdE16TTNOUzAwTm1VeExUZzFZall0T0RobU1HVXdZMkU0T0dJeSJ9
 
