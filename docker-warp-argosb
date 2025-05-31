@@ -1,0 +1,38 @@
+echo -e "${YELLOW}Starting cloudflared docker...${RESET}"
+docker run -itd --name=cloudflared \
+--network host \
+cloudflare/cloudflared:latest \
+tunnel --no-autoupdate --edge-ip-version auto --protocol http2 run --token eyJhIjoiNjQ1MTEzYmM3MWQ0MDgwMzA2ZmFmMWJhMmYyZmM4MGEiLCJ0IjoiNTU3NGY4ZTEtYmQzMS00MmY2LWIxYTYtZWFkOTE2ODNmMjhjIiwicyI6Ik9USmtOMk0yT1RBdE16TTNOUzAwTm1VeExUZzFZall0T0RobU1HVXdZMkU0T0dJeSJ9
+
+echo -e "${YELLOW}Starting warp jp at docker...${RESET}"
+docker run -itd \
+--name warp-jp \
+--restart=unless-stopped \
+--network host \
+ghcr.io/bepass-org/warp-plus \
+--bind 127.0.0.1:1080 --cfon --country JP
+
+echo -e "${YELLOW}Starting warp au docker...${RESET}"
+docker run -itd \
+--name warp-au \
+--restart=unless-stopped \
+--network host \
+ghcr.io/bepass-org/warp-plus \
+--bind 127.0.0.1:1081 --cfon --country AU
+
+echo -e "${YELLOW}Starting warp uk docker...${RESET}"
+docker run -itd \
+--name warp-uk \
+--restart=unless-stopped \
+--network host \
+ghcr.io/bepass-org/warp-plus \
+--bind 127.0.0.1:1082 --cfon --country GB
+
+echo -e "${YELLOW}Starting warp us docker...${RESET}"
+docker run -itd \
+--name warp-US \
+--restart=unless-stopped \
+--network host \
+ghcr.io/bepass-org/warp-plus \
+--bind 127.0.0.1:1083 --cfon --country US
+
