@@ -38,13 +38,18 @@ ghcr.io/bepass-org/warp-plus \
 
 echo -e "${YELLOW}Starting warp us docker...${RESET}"
 docker run -itd \
---name warp-US \
+--name warp-us \
 --restart=unless-stopped \
 --network host \
 ghcr.io/bepass-org/warp-plus \
 --bind 127.0.0.1:1083 --cfon --country US
 
-
+echo -e "${YELLOW}Starting warp us docker...${RESET}"
+docker run -itd \
+--name warp \
+--restart=unless-stopped \
+--network host \
+ghcr.io/bepass-org/warp-plus
 
 
 cat > ./config.json <<EOF
@@ -103,8 +108,8 @@ cat > ./config.json <<EOF
       "rules": [
         {
           "action": "route",
-          "inbound": "warp-us",
-          "outbound": "warp-us"
+          "inbound": "vmess-sb",
+          "outbound": "warp"
         }
       ]
     }
