@@ -54,7 +54,6 @@ ghcr.io/bepass-org/warp-plus
 
 cat > ./config.json <<EOF
 {
-{
     "log": {
       "disabled": false,
       "level": "info",
@@ -100,9 +99,33 @@ cat > ./config.json <<EOF
       {
         "type": "socks",
         "server": "127.0.0.1",
+        "server_port": 8086,
+        "tag": "warp"
+      },
+      {
+        "type": "socks",
+        "server": "127.0.0.1",
         "server_port": 1080,
+        "tag": "warp-jp"
+      },
+      {
+        "type": "socks",
+        "server": "127.0.0.1",
+        "server_port": 1081,
+        "tag": "warp-au"
+      },
+      {
+        "type": "socks",
+        "server": "127.0.0.1",
+        "server_port": 1082,
+        "tag": "warp-uk"
+      },
+      {
+        "type": "socks",
+        "server": "127.0.0.1",
+        "server_port": 1083,
         "tag": "warp-us"
-      }
+      },
     ],
     "route": {
       "rules": [
