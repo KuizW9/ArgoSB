@@ -60,18 +60,17 @@ cat > ./config.json <<EOF
       "timestamp": true
     },
     "route": {
+      "auto_detect_interface": true, 
       "rules": [
         {
-          "inbound":"vmess-sb",
-          "user":"direct",
+          "auth_user": "vmess-direct",
           "action": "route",
           "outbound": "direct"
         },
         {
-          "inbound":"vmess-sb",
-          "user":"warp",
+          "auth_user": "vmess-warp",
           "action": "route",
-          "outbound": "kuiz-socks"
+          "outbound": "warp-jp"
         }
       ]
     },
@@ -83,13 +82,33 @@ cat > ./config.json <<EOF
         "listen_port": 54321,
         "users": [
           {
-            "name": "direct",
+            "name":"vmess-direct",
             "uuid": "78cc3f99-77ac-49fc-a790-fa1ef19fe0bf",
             "alterId": 0
           },
           {
-            "name": "warp",
+            "name":"vmess-warp",
             "uuid": "a8cc3f99-77ac-49fc-a790-fa1ef19fe0bf",
+            "alterId": 0
+          },
+          {
+            "name":"vmess-uk",
+            "uuid": "b8cc3f99-77ac-49fc-a790-fa1ef19fe0bf",
+            "alterId": 0
+          },
+          {
+            "name":"vmess-us",
+            "uuid": "c8cc3f99-77ac-49fc-a790-fa1ef19fe0bf",
+            "alterId": 0
+          },
+          {
+            "name":"vmess-sg",
+            "uuid": "d8cc3f99-77ac-49fc-a790-fa1ef19fe0bf",
+            "alterId": 0
+          },
+          {
+            "name":"vmess-jp",
+            "uuid": "e8cc3f99-77ac-49fc-a790-fa1ef19fe0bf",
             "alterId": 0
           }
         ],
@@ -109,6 +128,10 @@ cat > ./config.json <<EOF
     ],
     "outbounds": [
       {
+        "type": "direct",
+        "tag": "direct"
+      },
+      {
         "type": "socks",
         "tag": "kuiz-socks",
         "server": "alvgw.xyz",
@@ -116,17 +139,6 @@ cat > ./config.json <<EOF
         "version": "5",
         "username": "",
         "password": ""
-      },
-      {
-        "type": "socks",
-        "tag":"warp",
-        "server": "127.0.0.1",
-        "server_port": 8086,
-        "version": "5",
-        "username": "",
-        "password": "",
-        "network": "tcp",
-        "udp_over_tcp": true
       },
       {
         "type": "socks",
@@ -163,10 +175,6 @@ cat > ./config.json <<EOF
         "version": "5",
         "username": "",
         "password": ""
-      },
-      {
-        "type": "direct",
-        "tag": "direct"
       }
     ]
   }EOF
