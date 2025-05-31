@@ -68,9 +68,29 @@ cat > ./config.json <<EOF
           "outbound": "direct"
         },
         {
-          "auth_user": "vmess-warp",
+          "auth_user": "vmess-au",
+          "action": "route",
+          "outbound": "warp-au"
+        },
+        {
+          "auth_user": "vmess-uk",
+          "action": "route",
+          "outbound": "warp-uk"
+        },
+        {
+          "auth_user": "vmess-us",
+          "action": "route",
+          "outbound": "warp-us"
+        },
+        {
+          "auth_user": "vmess-jp",
           "action": "route",
           "outbound": "warp-jp"
+        },
+        {
+          "auth_user": "vmess-sg",
+          "action": "route",
+          "outbound": "warp-sg"
         }
       ]
     },
@@ -87,7 +107,7 @@ cat > ./config.json <<EOF
             "alterId": 0
           },
           {
-            "name":"vmess-warp",
+            "name":"vmess-au",
             "uuid": "a8cc3f99-77ac-49fc-a790-fa1ef19fe0bf",
             "alterId": 0
           },
@@ -102,12 +122,12 @@ cat > ./config.json <<EOF
             "alterId": 0
           },
           {
-            "name":"vmess-sg",
+            "name":"vmess-jp",
             "uuid": "d8cc3f99-77ac-49fc-a790-fa1ef19fe0bf",
             "alterId": 0
           },
           {
-            "name":"vmess-jp",
+            "name":"vmess-sg",
             "uuid": "e8cc3f99-77ac-49fc-a790-fa1ef19fe0bf",
             "alterId": 0
           }
@@ -142,7 +162,7 @@ cat > ./config.json <<EOF
       },
       {
         "type": "socks",
-        "tag":"warp-jp",
+        "tag":"warp-au",
         "server": "127.0.0.1",
         "server_port": 1080,
         "version": "5",
@@ -151,7 +171,7 @@ cat > ./config.json <<EOF
       },
       {
         "type": "socks",
-        "tag":"warp-au",
+        "tag":"warp-uk",
         "server": "127.0.0.1",
         "server_port": 1081,
         "version": "5",
@@ -160,7 +180,7 @@ cat > ./config.json <<EOF
       },
       {
         "type": "socks",
-        "tag": "warp-uk",
+        "tag": "warp-us",
         "server": "127.0.0.1",
         "server_port": 1082,
         "version": "5",
@@ -169,9 +189,18 @@ cat > ./config.json <<EOF
       },
       {
         "type": "socks",
-        "tag": "warp-us",
+        "tag": "warp-jp",
         "server": "127.0.0.1",
         "server_port": 1083,
+        "version": "5",
+        "username": "",
+        "password": ""
+      },
+      {
+        "type": "socks",
+        "tag": "warp-sg",
+        "server": "127.0.0.1",
+        "server_port": 1084,
         "version": "5",
         "username": "",
         "password": ""
