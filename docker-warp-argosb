@@ -1,8 +1,16 @@
+Portainer-Warp-Docker
+
+
 echo -e "${YELLOW}Starting cloudflared docker...${RESET}"
 docker run -itd --name=cloudflared \
 --network host \
 cloudflare/cloudflared:latest \
 tunnel --no-autoupdate --edge-ip-version auto --protocol http2 run --token eyJhIjoiNjQ1MTEzYmM3MWQ0MDgwMzA2ZmFmMWJhMmYyZmM4MGEiLCJ0IjoiNTU3NGY4ZTEtYmQzMS00MmY2LWIxYTYtZWFkOTE2ODNmMjhjIiwicyI6Ik9USmtOMk0yT1RBdE16TTNOUzAwTm1VeExUZzFZall0T0RobU1HVXdZMkU0T0dJeSJ9
+
+
+
+
+nohup cloudflared tunnel --no-autoupdate --edge-ip-version auto --protocol http2 run --token eyJhIjoiNjQ1MTEzYmM3MWQ0MDgwMzA2ZmFmMWJhMmYyZmM4MGEiLCJ0IjoiNTU3NGY4ZTEtYmQzMS00MmY2LWIxYTYtZWFkOTE2ODNmMjhjIiwicyI6Ik9USmtOMk0yT1RBdE16TTNOUzAwTm1VeExUZzFZall0T0RobU1HVXdZMkU0T0dJeSJ9
 
 echo -e "${YELLOW}Starting warp jp at docker...${RESET}"
 docker run -itd \
@@ -36,3 +44,68 @@ docker run -itd \
 ghcr.io/bepass-org/warp-plus \
 --bind 127.0.0.1:1083 --cfon --country US
 
+
+
+
+cat > ./config.json <<EOF
+{
+{
+    "log": {
+      "disabled": false,
+      "level": "info",
+      "timestamp": true
+    },
+    "inbounds": [
+      {
+        "type": "vmess",
+        "tag": "vmess-sb",
+        "listen": "::",
+        "listen_port": 54321,
+        "users": [
+          {
+            "name": "vmess-sb",
+            "uuid": "78cc3f99-77ac-49fc-a790-fa1ef19fe0bf",
+            "alterId": 0
+          },
+          {
+            "name": "warp-us",
+            "uuid": "a8cc3f99-77ac-49fc-a790-fa1ef19fe0bf",
+            "alterId": 0
+          }
+        ],
+        "transport": {
+          "type": "ws",
+          "path": "@rudaoweishen",
+          "max_early_data": 2048,
+          "early_data_header_name": "Sec-WebSocket-Protocol"    
+        },
+        "tls": {
+          "enabled": false,
+          "server_name": "www.bing.com",
+          "certificate_path": "./cert.pem",
+          "key_path": "./private.key"
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "type": "direct",
+        "tag": "direct"
+      },
+      {
+        "type": "socks",
+        "server": "127.0.0.1",
+        "server_port": 1080,
+        "tag": "warp-us"
+      }
+    ],
+    "route": {
+      "rules": [
+        {
+          "action": "route",
+          "inbound": "warp-us",
+          "outbound": "warp-us"
+        }
+      ]
+    }
+  }EOF
