@@ -125,7 +125,7 @@ cat > ./config.json <<EOF
         "server": "127.0.0.1",
         "server_port": 1083,
         "tag": "warp-us"
-      },
+      }
     ],
     "route": {
       "rules": [
