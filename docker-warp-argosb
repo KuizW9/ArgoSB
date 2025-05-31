@@ -67,7 +67,7 @@ cat > ./config.json <<EOF
         "listen_port": 54321,
         "users": [
           {
-            "name": "vmess-sb",
+            "name": "vmess",
             "uuid": "78cc3f99-77ac-49fc-a790-fa1ef19fe0bf",
             "alterId": 0
           },
@@ -97,42 +97,43 @@ cat > ./config.json <<EOF
         "tag": "direct"
       },
       {
+        "tag":"warp",
         "type": "socks",
         "server": "127.0.0.1",
-        "server_port": 8086,
-        "tag": "warp"
+        "server_port": 8086
       },
       {
+        "tag":"warp-jp",
         "type": "socks",
         "server": "127.0.0.1",
-        "server_port": 1080,
-        "tag": "warp-jp"
+        "server_port": 1080
       },
       {
+        "tag":"warp-au",
         "type": "socks",
         "server": "127.0.0.1",
-        "server_port": 1081,
-        "tag": "warp-au"
+        "server_port": 1081
       },
       {
+        "tag": "warp-uk",
         "type": "socks",
         "server": "127.0.0.1",
-        "server_port": 1082,
-        "tag": "warp-uk"
+        "server_port": 1082
       },
       {
+        "tag": "warp-us",
         "type": "socks",
         "server": "127.0.0.1",
-        "server_port": 1083,
-        "tag": "warp-us"
+        "server_port": 1083
       }
     ],
     "route": {
       "rules": [
         {
+          "inbound":"vmess-sb",
+          "user":"warp-us",
           "action": "route",
-          "inbound": "vmess-sb",
-          "outbound": "warp"
+          "outbound": "warp-jp"
         }
       ]
     }
