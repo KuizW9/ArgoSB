@@ -1,4 +1,10 @@
 #!/bin/bash
+
+[ -f ./nixag/sbpid.log ] && kill $(cat ./nixag/sbpid.log) && echo "Killed process from sbpid"
+# Kill process from cfpig
+[ -f ./nixag/sbargopid.log ] && kill $(cat ./nixag/sbargopid.log) && echo "Killed process from cfpig"
+
+
 export LANG=en_US.UTF-8
 export nix=${nix:-'y'}
 [ -z "$nix" ] && sys='主流VPS-' || sys='容器NIX-'
